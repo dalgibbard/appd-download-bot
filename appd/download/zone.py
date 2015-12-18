@@ -164,7 +164,7 @@ class Zone(object):
 
             browser = self._open_url('{0}/browse/zone/{1}/'.format(self.BASE_URL, self.zone_id))
 
-            soup = bs4.BeautifulSoup(browser.response().read())
+            soup = bs4.BeautifulSoup(browser.response().read(), "html.parser")
             dropdown = soup.find('table', id='version_disp').find('select')
             for opt in dropdown.find_all('option'):
                 if opt['value'] == 'latest':
