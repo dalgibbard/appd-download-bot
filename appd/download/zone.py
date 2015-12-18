@@ -22,8 +22,8 @@ class Zone(object):
                 'saas': 1}
 
     PRODUCTS = ['controller', 'euem-processor', 'java-agent', 'ibm-agent', 'machine-agent',
-                'dotnet-agent', 'php-agent', 'ios-agent', 'android-agent', 'geo-server', 'ad4db',
-                'events-service', 'analytics-agent', 'analytics-processor', 'dbagent']
+                'dotnet-agent', 'php-agent', 'ios-agent', 'android-agent', 'web-agent', 'geo-server',
+                'ad4db','events-service', 'analytics-agent', 'analytics-processor', 'dbagent']
 
     PRODUCT_MAP = {'controller': 'controller',
                    'euem-processor': 'euem',
