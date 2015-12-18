@@ -2,8 +2,8 @@
 AppDynamics Download Robot
 ==========================
 
-Current version: 0.1.7
-Released: 23-Jun-2015
+Current version: 0.1.8
+Released: 18-Dec-2015
 
 .. image:: https://img.shields.io/travis/tradel/appd-download-bot.svg
    :target: https://travis-ci.org/tradel/appd-download-bot/
@@ -71,6 +71,8 @@ download. The script is capable of downloading the following products:
 | ``ios-agent``           | SDK for Apple iOS devices                          |
 +-------------------------+----------------------------------------------------+
 | ``android-agent``       | SDK for Android devices                            |
++-------------------------+----------------------------------------------------+
+| ``web-agent``           | Web Server Agent                                   |
 +-------------------------+----------------------------------------------------+
 
 *NOTE*: The Node.js agent is not included because it is normally

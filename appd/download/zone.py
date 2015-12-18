@@ -36,6 +36,7 @@ class Zone(object):
                    'php-agent': 'appdynamics-php-agent',
                    'ios-agent': 'iOSAgent',
                    'android-agent': 'AndroidAgent',
+                   'web-agent': 'appdynamics-sdk-native-nativeWebServer',
                    'geo-server': 'GeoServer',
                    'events-service': 'events-service',
                    'analytics-agent': 'analytics-agent',
@@ -286,9 +287,12 @@ class Zone(object):
             assert platform == 'linux', 'The PHP agent is only supported on Linux.'
             assert bits in [32, 64], 'You must select 32bit or 64bit.'
             assert package in ['rpm', 'tar'], 'You must select RPM or tar.bz2 packaging.'
+        elif product == 'web-agent':
+            assert platform == 'linux', 'The Web Server agent is only supported on Linux.'
+            assert bits in [32, 64], ' You must select 32bit or 64bit.'
         else:
             assert product in ['java-agent', 'ibm-agent', 'machine-agent', 'ios-agent',
-                               'android-agent', 'geo-server', 'events-service',
+                               'android-agent', 'web-agent', 'geo-server', 'events-service',
                                'analytics-processor', 'analytics-agent', 'dbagent'], \
                 'Product name is not valid.'
 
@@ -313,6 +317,9 @@ class Zone(object):
             else:
                 arch = 'x64' if (bits == 64) else 'x86'
                 return 'appdynamics-php-agent-{0}-linux-{1}.tar.bz2'.format(arch, self.version)
+        elif product == 'web-agent':
+            arch = '32bit' if (bits == 32) else '64bits'
+            return 'appdynamics-sdk-native-nativeWebServer-{0}-linux-{1}.tar.gz'.format(arch, self.version)
         else:
             def zipname(name):
                 return '{0}-{1}.zip'.format(Zone.PRODUCT_MAP[name], self.version)
